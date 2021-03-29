@@ -1,0 +1,102 @@
+<div class="animated fadeIn">
+    <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Yeni Araba</strong>
+        </div>
+        <div class="card-body">
+          <form  [formGroup]="addCarForm"  class="form-horizontal">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="text-input">Araba Adı/Modeli</label>
+              <div class="col-md-9">
+                <input formControlName="name" type="text" id="text-input" name="text-input" class="form-control" placeholder="Araba Adı/Modeli">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select1">Marka</label>
+                <div class="col-md-9">
+                  <select formControlName="brandId" id="select1" name="select1" class="form-control">
+                    <option value="0">Marka Seçiniz</option>
+                    <option *ngFor="let brand of brands" value="{{brand.id}}">{{brand.name}}</option>
+                    
+                  </select>é
+                </div>
+              </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label"  for="ccyear">Year</label>
+                <div class="col-md-9">
+                    <select formControlName="modelYear" class="form-control" id="ccyear">
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select2">Renk</label>
+                <div class="col-md-9">
+                  <select formControlName="colorId" id="select2" name="select2" class="form-control form-control-lg">
+                    <option value="0">Renk Seçiniz</option>
+                    <option *ngFor="let color of colors" value="{{color.id}}">{{color.name}}</option>
+
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Açıklama</label>
+                <div class="col-md-9">
+                  <input formControlName="description" type="text" id="text-input" name="text-input" class="form-control" placeholder="Açıklama">
+                </div>
+            </div>
+            
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select1">Günlük Kiralama Bedeli</label>
+                <div class="col-md-9">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-try"></i></span>
+                        </div>
+                        <input formControlName="dailyPrice" type="text" id="input3-group1" name="input3-group1" class="form-control" placeholder="..">
+                        
+                    </div>
+                </div>
+            </div>
+            
+         
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="file-multiple-input">Resim Ekle</label>
+                <div class="col-md-9">
+                    <input 
+                        formControlName="images"
+                        id="file" 
+                        type="file" 
+                        multiple
+                        class="form-control"
+                        (change)="onFileChange($event)"/>
+                </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer ">
+          <button (click)="addCar()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Ekle</button>
+        </div>
+      </div>
+    
+   
+    </div><!--/.col-->
+  </div><!--/.row-->
+  </div><!--/.row-->
