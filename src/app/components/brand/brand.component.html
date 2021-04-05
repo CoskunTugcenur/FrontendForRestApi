@@ -1,1 +1,27 @@
-<p>brand works!</p>
+<div *ngIf="listType=='list'" class="col-sm-12">
+  <div class="card">
+    <div class="card-header">
+        <strong>Markalar</strong>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <ul class="nav navbar-nav d-md-down-none">
+            <li routerLink="/cars/brand/{{brand.id}}" class="nav-item px-3" *ngFor="let brand of brands">
+              <h4>{{brand.name}}</h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<form [formGroup]="brandForm">
+<select *ngIf="listType=='select'"   formControlName="selectBrand"  (change)="onChange()" id="brand" name="brand" class="form-control form-control-lg">
+  <option value="0">Marka Seçiniz </option>
+  <option *ngFor="let brand of brands" value="{{brand.id}}">{{brand.name}}</option>   
+</select>
+</form>

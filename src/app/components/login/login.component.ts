@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   
   login(){
     if (this.loginForm.valid){
-      let loginModule=Object.assign({},this.loginForm.value);
-      console.log(loginModule);
+      let LoginModel=Object.assign({},this.loginForm.value);
+      console.log(LoginModel);
     
     }
   }

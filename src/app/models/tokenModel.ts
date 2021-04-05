@@ -1,4 +1,4 @@
-export interface TokenModule{
+export interface TokenModel{
     token:string;
     expiration:string;
 }

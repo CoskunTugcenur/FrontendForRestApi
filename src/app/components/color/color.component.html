@@ -1,1 +1,26 @@
-<p>color works!</p>
+<div *ngIf="listType=='list'" class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+          <strong>Renkler</strong>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="nav navbar-nav d-md-down-none">
+                <li  routerLink="/cars/color/{{color.id}}" class="nav-item px-3" (onClick)="setCurrentColor(color)" *ngFor="let color of colors">
+                    <h4>{{color.name}}</h4>  
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+<form [formGroup]="colorForm">
+  <select *ngIf="listType=='select'" formControlName="selectColor"  (change)="onChange()" id="color" name="color" class="form-control form-control-lg">
+      <option value="1">Renk Seçiniz </option>
+      <option *ngFor="let color of colors" value="{{color.id}}">{{color.name}}</option>  
+  </select>
+</form>

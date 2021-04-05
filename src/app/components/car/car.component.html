@@ -1,11 +1,124 @@
-<!-- <table class="table">
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <ul class="nav navbar-nav d-md-down-none">
+          <li routerLink="/cars" class="nav-item px-3">
+            <h4>Tüm Arabalar</h4>
+          </li>
+        </ul>
+        <app-brand [listType]="'list'"></app-brand>
+        <app-color [listType]="'list'"></app-color>
+      </div>
+    </div> 
+    <div class="col-sm-9">
+      <div class="card">
+        <div class="card-body">
+           <div class="row">
+            <div class="col-md-9">
+              <input class="form-control form-control-lg" 
+              type="text" placeholder="Araba Ara" 
+              id="filterText"
+              for="filterText"
+              [(ngModel)]="filterText">
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-primary"> Araba Ara</button>
+            </div>        
+          </div>
+          <br>
+          
+            <div class="row">
+              <div class="col-md-9">
+                <app-brand  (brandChanged)="changeBrand($event)" [listType]="'select'"></app-brand>
+              </div>
+              <div class="col-md-3">
+                <button (click)="filterByBrandId()" class="btn btn-primary">  Filtrele</button>
+              </div>        
+            </div>
+  <br>
+            <div class="row">
+              <div class="col-md-9">
+                <app-color (colorChanged)="changeColor($event)" [listType]="'select'" ></app-color>
+              </div>
+              <div class="col-md-3">
+                <button (click)="filterByColorId()" class="btn btn-primary"> Filtrele</button>
+              </div>        
+            </div>
+        
+          <br>
+              
+          <div class="row">
+              <div *ngFor="let car of carsDto | filterPipe:filterText" class="col-md-3">     
+                <div class="card">
+                  <div class="card-header">
+                      {{car.brandName}} 
+                    <div class="card-header-actions">
+                      <a href="/carDetail/{{car.id}}" >
+                        <small className="text-muted">incele </small>
+                      </a>
+                    </div>   
+                  </div>    
+                  <div class="card-body">
+                    <carousel >
+                      <slide *ngFor="let carImage of car.carImages" >
+                        <img   src="https://localhost:44331/Images/{{carImage.imagePath}}" alt="First slide" style="display: block; width: 100%;">
+                      </slide>             
+                    </carousel>
+                  </div>
+                </div>
+              </div>                    
+          </div>               
+        </div>
+      </div>
+    </div>
+</div>               
+  
+</div>
+<!-- <div class="row">
+  <div *ngFor="let car of cars" class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        {{car.brandName}}</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">${{car.dailyPrice}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+ Illustrations
+  <div *ngFor="let car of cars" class="card shadow mb-4">
+      <div class="card-body">
+          <div class="text-center">
+              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                  src="img/undraw_posting_photo.svg" alt="">
+          </div>
+          <p>Add some quality, svg illustrations to your project courtesy of <a
+                  target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
+              constantly updated collection of beautiful svg images that you can use
+              completely free and without attribution!</p>
+          <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
+              unDraw &rarr;</a>
+      </div> -->
+
+<!-- 
+<table class="table">
     <tr *ngFor="let car of cars">
-      <td>{{ car.Id }}</td>
+      <td>{{ car.id }}</td>
       <td>{{ car.name }}</td>
       <td>{{ car.brandId }}</td>
       <td>{{ car.colorId }}</td>
       <td>{{ car.modelYear }}</td>
       <td>{{ car.dailyPrice }}</td>
     </tr>
-</table> -->
-  
+</table> --> 

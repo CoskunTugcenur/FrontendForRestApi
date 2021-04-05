@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-9">
+              <div class="row">
+                <div class="animated fadeIn">
+                  <div class="row">
+                    <div  class="col-sm-3">
+                      
+                      <div class="card">
+                        <div class="card-header">
+                          {{car.brandName}} 
+                          <div class="card-header-actions">
+                            <a href="https://valor-software.com/ngx-bootstrap/#/carousel" target="_blank">
+                              <small className="text-muted">incele </small>
+                            </a>
+                          </div>
+                        </div>
+                        
+                        <div class="card-body">
+                          <carousel >
+                            <slide *ngFor="let carImage of car.carImages" >
+                              <img   src="https://localhost:44331/Images/{{carImage.imagePath}}" alt="First slide" style="display: block; width: 100%;">
+                            </slide>
+                           
+                          </carousel>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                 
+                </div>
+              
+              </div><!--/.row-->
+            </div><!--/.col-->
+          </div><!--/.row-->
+          <br>
+       
+        </div>
+      </div>
+    </div><!--/.col-->
+  </div><!--/.row-->
+    
