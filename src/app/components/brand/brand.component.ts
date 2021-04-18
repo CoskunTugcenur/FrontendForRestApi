@@ -26,7 +26,7 @@ export class BrandComponent implements OnInit {
 
   createForm(){
     this.brandForm=this.formBuilder.group({
-      selectBrand:["",Validators.required]
+      selectBrand:[0,Validators.required]
     });
   }
 

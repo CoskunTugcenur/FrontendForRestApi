@@ -9,9 +9,9 @@ import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   {path:"",pathMatch:"full",component:LoginComponent},
   {path:"cars",component:CarComponent},
-  {path:"cars/color/:colorId",component:CarComponent},
-  {path:"cars/brand/:brandId",component:CarComponent},
-  {path:"carDetail/carId/:carId",component:CarDetailComponent},
+  {path:"cars/:colorId",component:CarComponent},
+  {path:"cars/:brandId",component:CarComponent},
+  {path:"carDetail/:carId",component:CarDetailComponent},
   {path:"addCar",component:CarAddComponent},
   {path:"register",component:RegisterComponent},
 ];

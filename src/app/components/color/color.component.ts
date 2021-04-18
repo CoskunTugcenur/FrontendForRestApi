@@ -26,7 +26,7 @@ export class ColorComponent implements OnInit {
 
   createdForm(){
     this.colorForm=this.formBuilder.group({
-      selectColor:["",Validators.required]
+      selectColor:[0,Validators.required]
     });
   }
 

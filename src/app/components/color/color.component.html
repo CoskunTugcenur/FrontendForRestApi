@@ -20,7 +20,7 @@
   
 <form [formGroup]="colorForm">
   <select *ngIf="listType=='select'" formControlName="selectColor"  (change)="onChange()" id="color" name="color" class="form-control form-control-lg">
-      <option value="1">Renk Seçiniz </option>
+      <option value="0">Renk Seçiniz </option>
       <option *ngFor="let color of colors" value="{{color.id}}">{{color.name}}</option>  
   </select>
 </form>
